@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{name}}
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+{% if not_found == false %}
+<h1> Search results</h1>
+<br>
+{% for row in rows %}
+<div class="gallery">
+  <a href="/item/{{row.name}}">
+    <img src="{{row.image}}" alt="{{row.name}}">
+  </a>
+  <div class="desc">{{row.name}}<br>{{row.price| pkr}}</div>
+</div>
+{% endfor %}
+
+{% else %}
+<h1>No items found</h1>
+{% endif %}
+{% endblock %}

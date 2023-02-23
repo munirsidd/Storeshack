@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Address
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<div id="pi">
+<br>
+<h5>Current Address</h5>
+{% for row in rows %}
+<label>Address:</label>
+<p>{{row.address}}</p>
+<label>City:</label>
+<p>{{row.city}}</p>
+<label>Province:</label>
+<p>{{row.province}}</p>
+<label>Zip Code:</label>
+<p>{{row.zip_code}}</p>
+{% endfor %}
+</div>
+<br>
+<form method="POST" id="personal_form">
+  <fieldset>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Address</label>
+      <input type="address" class="form-control" id="exampleInputaddress" name="address" aria-describedby="addressHelp" placeholder="Enter Address">
+    </div>
+        <div class="form-group">
+      <label for="exampleInputEmail1">City</label>
+      <input type="address" class="form-control" id="exampleInputaddress" name="city" aria-describedby="addressHelp" placeholder="Enter City">
+    </div>
+        <div class="form-group">
+      <label for="exampleInputEmail1">Province</label>
+      <input type="address" class="form-control" id="exampleInputaddress" name="province" aria-describedby="addressHelp" placeholder="Enter Province">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Zip Code</label>
+      <input type="address" class="form-control" id="exampleInputaddress" name="zip_code" aria-describedby="addressHelp" placeholder="Enter Zip Code">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+    </div>
+    <button type="submit" name="address"class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>
+{% endblock %}

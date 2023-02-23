@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Confirm Order
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<h1 class="placed">Your Order has been Placed</h1>
+<h4>Order Number: {{ order_id }}</h4>
+<h5>Estimated delivery time: 5-7 business days</h5>
+<br>
+<br>
+<h5>Your order:</h5>
+<br>
+  <table class="table table-hover" id="checkout_cart">
+  <thead>
+    <tr>
+      <th scope="col" class="center">Item</th>
+      <th scope="col" class="center">Quantity</th>
+      <th scope="col" class="center">Total</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for item in items %}
+      <tr class="table-secondary" id="item_in_cart">
+        <td class="center" style="vertical-align: middle;">{{item.item}}</td>
+        <td class="center" style="vertical-align: middle;">{{item.quantity}}</td>
+        <td class="center" style="vertical-align: middle;">{{(item.price * item.quantity) | pkr}}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <td></td>
+    <td></td>
+    <td class="total" style="vertical-align: middle;">{{total | pkr}}</td>
+  </tfoot>
+  </table>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Checkout
+{% endblock %}
+
+{% block main %}
+    <br>
+    <br>
+    <h1>Checkout</h1>
+    <br>
+<br>
+  <table class="table table-hover" id="checkout_in_cart">
+  <thead>
+    <tr>
+      <th scope="col" class="center">Item</th>
+      <th scope="col" class="center">Quantity</th>
+      <th scope="col" class="center">Total</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for item in items %}
+      <tr class="table-secondary" id="item_in_cart">
+        <td class="center" style="vertical-align: middle;">{{item.item}}</td>
+        <td class="center" style="vertical-align: middle;">{{item.quantity}}</td>
+        <td class="center" style="vertical-align: middle;">{{(item.price * item.quantity) | pkr}}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <td></td>
+    <td></td>
+    <td class="total" style="vertical-align: middle;">{{total | pkr}}</td>
+  </tfoot>
+  </table>
+  </div>
+  {% if length == 0 %}
+    <form class="checkout" method="Post" id="checkout_form">
+        <fieldset>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" class="form-control" id="exampleInputfullname" name="full_name" aria-describedby="full_name" placeholder="Enter Full Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="exampleInputemail" name="email" aria-describedby="email" placeholder="Enter Email">
+          </div>
+          <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" class="form-control" id="exampleInputphone_number" name="phone_number" aria-describedby="phone_number" placeholder="Enter Phone Number">
+          </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <label for="exampleTextarea">Address</label>
+                <input type="text" class="form-control" id="exampleInputaddress" name="address" aria-describedby="Address" placeholder="Enter Address">
+            </div>
+            <div class="form-group">
+                <label for="exampleTextarea">City</label>
+                <input type="text" class="form-control" id="exampleInputcity" name="city" aria-describedby="city" placeholder="Enter City">
+            </div>
+            <div class="form-group">
+                <label for="province">Province</label>
+                <input type="province" class="form-control" id="exampleInputProvince" name="province" aria-describedby="province" placeholder="Province">
+            </div>
+            <div class="form-group">
+                <label for="zip-code">Zip Code</label>
+                <input type="zip-code" class="form-control" id="exampleInputzip-code" name="zip_code" aria-describedby="zip-code" placeholder="Zip Code">
+            </div>
+        <br>
+        </fieldset>
+        <fieldset class="form-group">
+        <label>Payment Method</label>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="payment_method" id="optionsRadios1" value="Cash on Delivery" checked="">
+            Cash on Delivery
+          </label>
+        </div>
+        <br>
+      </fieldset>
+      <button class="btn btn-primary btn-xs" name="confirm_order" type="submit">Confirm Order</button>
+    </form>
+  {% else %}
+  {% for checkout in checkouts %}
+  <label>Name</label>
+  <p>{{checkout.full_name}}</p>
+  <label>Email</label>
+  <p>{{checkout.email}}</p>
+  <label>Phone Number</label>
+  <p>{{checkout.phone_number}}</p>
+  <label>Address</label>
+  <p>{{checkout.address}}</p>
+  <label>City</label>
+  <p>{{checkout.city}}</p>
+  <label>Province</label>
+  <p>{{checkout.province}}</p>
+  <label>Zip Code</label>
+  <p>{{checkout.zip_code}}</p>
+  <label>Payment Method</label>
+  <p>{{checkout.payment_method}}</p>
+  <form method="POST">
+
+    <a href="/change_checkout" class="edit_information";>Edit Information</a>
+    <br>
+    <br>
+    <button class="btn btn-primary btn-xs" name="confirm_order" type="submit">Confirm Order</button>
+  </form>
+  {% endfor %}
+  {% endif %}
+  <br>
+  <br>
+  <br>
+{% endblock %}

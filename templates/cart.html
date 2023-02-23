@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cart
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+{% if no_items == False %}
+<div class="shopping-cart">
+  <div class="title">
+    <h1>My Cart</h1>
+  </div>
+  <br>
+  <table class="table table-hover" id="cart_in_checkout">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col" class="center">Item</th>
+      <th scope="col" class="center">Quantity</th>
+      <th scope="col" class="center">Price</th>
+      <th scope="col" class="center">Total</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for item in items %}
+      <tr class="table-secondary" id="item_in_cart">
+        <td><a href="/item/{{item.item}}"><img src="{{item.image}}" alt="{{item.item}}" id="cart_item"></td>
+        <td class="center" style="vertical-align: middle;">{{item.item}}</td>
+        <td class="center" style="vertical-align: middle;">{{item.quantity}}</td>
+        <td class="center" style="vertical-align: middle;">{{item.price | pkr}}</td>
+        <td class="center" style="vertical-align: middle;">{{(item.price * item.quantity) | pkr}}</td>
+        <td class="center" style="vertical-align: middle;"><form method="post"><button class="btn btn-primary btn-xs" name="{{item.item}}" type="submit">Remove</button></form></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="total" style="vertical-align: middle;">{{total | pkr}}</td>
+    <td class="center" style="vertical-align: middle;"><form method="post"><button class="btn btn-primary btn-xs" name="checkout" type="submit">Checkout</button></form></td>
+  </tfoot>
+  </table>
+  </div>
+  <br>
+  {% else %}
+  <h5>No items in cart</h5>
+  {% endif %}
+
+{% endblock %}

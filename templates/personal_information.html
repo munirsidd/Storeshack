@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Personal Informataion
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<div id="pi">
+  <br>
+<h5>Personal Informataion</h5>
+{% for row in rows %}
+<label>First Name:</label>
+<p>{{row.first_name}}</p>
+<label>Last Name:</label>
+<p>{{row.last_name}}</p>
+<label>Username:</label>
+<p>{{row.username}}</p>
+<label>Email:</label>
+<p>{{row.email}}</p>
+{% endfor %}
+</div>
+<br>
+<form method="POST" id="personal_form">
+  <fieldset>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email Address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+    </div>
+    <button type="submit" name="email"class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>
+<br>
+<br>
+<form method="POST" id="personal_form">
+  <fielset>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Old Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="old_password" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1"> New Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="new_password" placeholder="New Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Confirm New Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="confirm_new_password" placeholder="Confirm New Password">
+    </div>
+    <button type="submit" name="password"class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>
+<br>
+<br>
+{% endblock %}

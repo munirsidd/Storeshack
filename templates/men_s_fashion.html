@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Men's Fashion
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<h1>Men's Fashion</h1>
+<br>
+{% for product in products %}
+<div class="gallery">
+  <a href="/item/{{product.name}}">
+  <img src="{{product.image}}" alt="{{product.name}}">
+  </a>
+  <div class="desc">{{product.name}}<br>{{product.price | pkr}}</div>
+</div>
+{% endfor %}
+{% endblock %}

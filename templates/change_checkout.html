@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Checkout
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<form class="checkout" method="Post" id="checkout_form">
+        <fieldset>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" class="form-control" id="exampleInputfullname" name="full_name" aria-describedby="full_name" placeholder="Enter Full Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="exampleInputemail" name="email" aria-describedby="email" placeholder="Enter Email">
+          </div>
+          <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" class="form-control" id="exampleInputphone_number" name="phone_number" aria-describedby="phone_number" placeholder="Enter Phone Number">
+          </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <label for="exampleTextarea">Address</label>
+                <input type="text" class="form-control" id="exampleInputaddress" name="address" aria-describedby="Address" placeholder="Enter Address">
+            </div>
+            <div class="form-group">
+                <label for="exampleTextarea">City</label>
+                <input type="text" class="form-control" id="exampleInputcity" name="city" aria-describedby="city" placeholder="Enter City">
+            </div>
+            <div class="form-group">
+                <label for="province">Province</label>
+                <input type="province" class="form-control" id="exampleInputProvince" name="province" aria-describedby="province" placeholder="Province">
+            </div>
+            <div class="form-group">
+                <label for="zip-code">Zip Code</label>
+                <input type="zip-code" class="form-control" id="exampleInputzip-code" name="zip_code" aria-describedby="zip-code" placeholder="Zip Code">
+            </div>
+        <br>
+        </fieldset>
+        <fieldset class="form-group">
+        <label>Payment Method</label>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="payment_method" id="optionsRadios1" value="Cash on Delivery" checked="">
+            Cash on Delivery
+          </label>
+        </div>
+        <br>
+      </fieldset>
+      <button class="btn btn-primary btn-xs" name="submit" type="submit">Submit</button>
+</form>
+    {% endblock %}

@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{name}}
+{% endblock %}
+
+{% block main %}
+<br>
+<br>
+<br>
+<h1 class="product_name">&nbsp;{{name}}</h1>
+<br>
+<br>
+<div class="picture">
+  <img class="image"src="{{url}}" alt="{{name}}">
+</div>
+<br>
+<div class="box">
+    <h3 class="price">{{price | pkr}}</h3>
+
+    {% if out_stock == True %}
+      <h3 class="outstock">Out of stock</h3>
+    {% elif low_stock == True %}
+        <h3 class="lowstock">Only {{stock}} remaining in stock</h3>
+    {% else %}
+        <h3 class="instock">In stock</h3>
+    {% endif %}
+    <form method="post">
+      <button class="btn btn-primary btn-xs" name="add_cart" type="submit" name="add_cart">Add to cart</button>
+    </form>
+</div>
+<br>
+
+
+<div class="box1">{{description}}</div>
+
+<h6 class="yes">&nbsp;&nbsp;{% if yes_percentage != 0%}{{yes_percentage}}% of users recommend this product<br>&nbsp;&nbsp;({{yes}} out of {{total}}){% endif %}</h6>
+<h6 class="yes">&nbsp;&nbsp;{% if avg_stars != 0 %}{% if avg_stars  == 1 %}Average user rating: {{avg_stars}} star {% else %}Average user rating: {{avg_stars}} stars{% endif %}{% endif %}</h6>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form method="post" id="review_form">
+    <fieldset>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="exampleInputUsername" name="username" aria-describedby="username" placeholder="Enter Username">
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="rating" name="rating">Rating</label>
+          <div class="txt-center">
+              <form>
+                  <div class="rating">
+                      <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                      <label for="star5">☆</label>
+                      <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                      <label for="star4">☆</label>
+                      <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                      <label for="star3">☆</label>
+                      <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+                      <label for="star2">☆</label>
+                      <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                      <label for="star1">☆</label>
+                      <div class="clear"></div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleTextarea">Review</label>
+        <textarea name="review" class="form-control" id="exampleTextarea" rows="3"></textarea>
+      </div>
+      <br>
+      <fieldset class="form-group">
+        <label>Would you recommend this to others?</label>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="recommendation" id="optionsRadios1" value="Yes" checked="">
+            Yes
+          </label>
+        </div>
+        <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="recommendation" id="optionsRadios2" value="No">
+            No
+        </label>
+        </div>
+        <br>
+      </fieldset>
+      <button type="submit" name="submit_review" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+  <br>
+  <br>
+
+
+
+<div class="reviews">
+  <p class="name">Reviews</p>
+  {% for line in lines %}
+    <p class="text">{% if line.stars == 1 %}{{ line.username }} ({{ line.stars}} star): {{ line.review }}{% else %}{{ line.username }} ({{ line.stars}} stars): {{ line.review }}{% endif %} </p>
+  {% endfor %}
+</div>
+<br>
+<br>
+{% endblock %}

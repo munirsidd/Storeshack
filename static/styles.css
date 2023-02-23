@@ -1,0 +1,345 @@
+
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #343a40;
+  overflow-x: hidden;
+  transition: 0.25s;
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+.sidebar a {
+  padding: 8px 23px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: grey;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #343a40;
+  color: white;
+  padding: 10px 5px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #343a40;
+}
+
+#main {
+  transition: margin-left .25s;
+  padding: 16px;
+}
+.dropdown-menu{
+  right: 0;
+}
+
+div.gallery {
+  margin-top: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+  height: 250px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+div.desc {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.main{
+  margin-left: 180px;
+  margin-right: 65px;
+}
+.image{
+  max-width: 100%;
+  max-height: 100%
+}
+
+.picture{
+  float: left;
+  width: 400px;
+  height: 450px;
+}
+
+.name{
+  font-size: 40px;
+}
+
+.price{
+  text-align: center;
+}
+
+.outstock{
+  text-align: center;
+  color: red;
+}
+
+.instock{
+  text-align: center;
+  color: #38a31a;
+}
+
+.lowstock{
+  text-align: center;
+  color: red;
+}
+.box {
+  background-color: white;
+  width: 300px;
+  border: 3px solid;
+  padding: 30px;
+  margin: 10px;
+  border-color: black;
+  float:right;
+  text-align: center;
+}
+.btn-primary{
+  float:center;
+}
+
+.box1 {
+  margin-left: 34%;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 40%;
+  border: 10px solid white;
+  padding: 20px;
+}
+
+.yes{
+  margin-left: 34%;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 20px
+}
+
+.txt-center {
+    text-align: center;
+}
+.name{
+  font-size: 20px;
+}
+.hide {
+    display: none;
+}
+
+.clear {
+    float: none;
+    clear: both;
+}
+
+.rating {
+    width: 277px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+    font-size: 50px;
+    position: relative;
+}
+
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
+
+.text{
+  font-size: 15px;
+}
+.name{
+  font-size: 20px;
+}
+
+.reviews{
+  border: 1px solid;
+  border-radius: 0.75rem;
+  padding: 30px;
+  width: 50%;
+  float:left;
+  margin-bottom: 15px;
+}
+.logo{
+  border:1px solid white;
+  width:1000px;
+  height: 300px;
+}
+.categories {
+  margin-top: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 20px;
+  float: left;
+  width: 400px;
+  height: 300px;
+  position: relative;
+  border: 1px solid white;
+  background-color: white;
+  text-align:center;
+}
+
+div.categories img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
+
+div.des {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+#cart_item {
+  width: 150px;
+  height: 130px;
+}
+
+.center {
+  text-align: center;
+}
+
+.total {
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.placed {
+  color: #38a31a;
+}
+
+#checkout_in_cart {
+  width: 500px;
+  float: right;
+}
+
+#checkout_form {
+  width: 500px;
+}
+
+#review_form {
+  width: 630px;
+}
+
+#login_form {
+  width: 400px;
+  margin-left: 28.5%;
+  margin-right: 50%;
+  text-align: center;
+}
+
+#login_button {
+  width: 150px;
+}
+
+#register_form {
+  width: 400px;
+  margin-left: 28.5%;
+  margin-right: 50%;
+  text-align: center;
+}
+.address {
+  background-color: white;
+  width: 500px;
+  height: 150px;
+  border: 3px solid;
+  padding: 35px;
+  border-color: black;
+  float:right;
+  text-align: center;
+}
+.personal {
+  background-color: white;
+  width: 500px;
+  border: 3px solid;
+  padding: 15px;
+  border-color: black;
+  float:left;
+  text-align: center;
+  height: 150px;
+}
+.edit {
+  float: right;
+  color: #008CBA;
+}
+.edit_information {
+  color: #008CBA;
+}
+
+#personal_form {
+  width: 500px;
+}
+
+#pi {
+  margin-right: 200px;
+  border: 3px solid white;
+  float: right;
+}
+
+#SS {
+  margin-left: 6px;
+  margin-right: 6px;
+}
